@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi esposito? - Estilo Kaoruko Waguri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Arial&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+           background-image: url('https://www.animedep.com/wp-content/uploads/2025/07/anh-kaoruko-waguri-13.webp'); background-size: cover;
+            color: #6a1b9a; /* Púrpura oscuro, inspirado en su cabello */
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            animation: bloom 2s infinite;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            margin: 10px;
+            border: none;
+            border-radius: 10px; /* Bordes más suaves */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #yes {
+            background-color: #f48fb1; /* Rosa suave, como su cardigan */
+            color: white;
+        }
+        #no {
+            background-color: #9e9e9e; /* Gris neutral, para no ser agresivo */
+            color: white;
+        }
+        #message {
+            font-size: 2em;
+            margin-top: 50px;
+            display: none;
+            color: #388e3c; /* Verde para mensaje positivo */
+        }
+        .flower {
+            position: absolute;
+            font-size: 2em;
+            animation: float 6s infinite ease-in-out;
+        }
+        @keyframes bloom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(180deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>https://animedep.com/wp-content/uploads/2025/07/anh-kaoruko-waguri-7.webp
+    <h1>¡Hola, mi cevichito! ¿Quieres ser mi esposito? 🌸</h1>
+    <div class="buttons">
+        <button id="yes">Sí</button>
+        <button id="no">No</button>
+    </div>
+    <div id="message"></div>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const message = document.getElementById('message');
+
+        yesButton.addEventListener('click', () => {
+            message.textContent = '¡Yay! ¡Te amo tanto, como una flor que blooms con dignidad! 💕🌸';
+            message.style.display = 'block';
+            noButton.style.display = 'none';
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 200);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Añadir flores flotantes
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.textContent = '🌸';
+            flower.style.left = `${Math.random() * 100}vw`;
+            flower.style.animationDuration = `${Math.random() * 4 + 3}s`;
+            document.body.appendChild(flower);
+            setTimeout(() => flower.remove(), 6000);
+        }
+        setInterval(createFlower, 700);
+    </script>
+</body>
+</html>
